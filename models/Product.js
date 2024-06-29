@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const ProductSchema = new Schema({
+const productSchema = new Schema({
     sku: {
         type: Number,
         trim: true,
@@ -19,4 +19,4 @@ const ProductSchema = new Schema({
     }
 });
 
-module.exports = model('Product', ProductSchema);
+module.exports = model('product', productSchema);

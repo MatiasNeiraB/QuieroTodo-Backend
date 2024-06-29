@@ -1,18 +1,18 @@
-const Product = require("../models/Product")
+const product = require("../models/product")
 
-exports.GetProduct = async (req, res) => {
+exports.getProducts = async (req, res) => {
     try {
-        const products = await Product.find();
+        const products = await product.find();
         res.json(products);
     } catch (error) {
         console.log(error);
         res.status(400).json({ ok: false, message: 'Ha ocurrido un error' });
     }
 }
-exports.GetProducts = async (req, res) => {
+exports.getProduct = async (req, res) => {
     try {
         const sku = req.params.sku;
-        const products = await Product.findById(sku);
+        const products = await product.findById(sku);
         res.json(products);
     } catch (error) {
         console.log(error);
@@ -20,10 +20,10 @@ exports.GetProducts = async (req, res) => {
     }
 }
 
-exports.NewProduct = (req, res) => {
+exports.addProduct = (req, res) => {
     console.log(req.body);
 }
 
-exports.DeleteProduct = (req, res) => {
+exports.deleteProduct = (req, res) => {
     res.send('delete')
 }
